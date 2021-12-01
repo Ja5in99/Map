@@ -1,4 +1,8 @@
-       function initMap(){
+
+
+let map;
+
+function initMap(){
 
         var options ={
             zoom:14,
@@ -10,15 +14,17 @@
         var infoWindow = new google.maps.InfoWindow();
         var latlngbounds = new google.maps.LatLngBounds();
         var map = new google.maps.Map(document.getElementById("map"), options);
-        google.maps.event.addListener(map,'click',function(event) {				
-        document.getElementById('latclicked').innerHTML = event.latLng.lat();
-        document.getElementById('longclicked').innerHTML =  event.latLng.lng();
-
+        google.maps.event.addListener(map,'click',function(event) {		
+            		
+        latclicked = event.latLng.lat();
+        longclicked  =  event.latLng.lng();
+console.log(event.latLng.lat());
+console.log(event.latLng.lng());
             });
     }
     function yrApi (){
 let xhr = new XMLHttpRequest();
-xhr.open ("GET", 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=' + + '&lon=100');
+xhr.open ("GET", 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=' + latclicked + '&lon=' +longclicked);
 xhr.responseType = "json";
 xhr.onload = function () {
 
