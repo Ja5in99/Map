@@ -5,14 +5,11 @@ let map, infoWindow;
 
 
 function initMap(){
-
-    
-        var options ={
-            zoom:14,
-            center:{lat:53, lng:42}
-            
+            var options ={
+            zoom:18,
+            center:{lat:58.43464110000001, lng:15.5971157},
         }
-        
+
         var map = new   
         google.maps.Map(document.getElementById('map'), options);
         var infoWindow = new google.maps.InfoWindow();
@@ -21,8 +18,6 @@ function initMap(){
         google.maps.event.addListener(map,'click',function(event) {		
         latclicked = event.latLng.lat();
         longclicked  =  event.latLng.lng();
-console.log(event.latLng.lat());
-console.log(event.latLng.lng());
 
 const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
 
@@ -210,16 +205,3 @@ yrApi();
         
             xhr.send();
         }
-        function load(){            
-                if(navigator.geolocation)
-                {
-                    navigator.geolocation.getCurrentPosition(showPosition);
-                }
-                else{x.innerHTML="Geolocation is not supported by this browser.";}
-            }
-            function showPosition(position)
-            {
-                latclicked=position.coods.latitude
-                longclicked=position.coords.longitude
-            }
-            load()
