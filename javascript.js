@@ -191,6 +191,12 @@ function initMap() {
                                         `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                                     );
                                 }
+                                if (part.types.includes("postal_town")) {
+                                    document.body.insertAdjacentHTML(
+                                        "beforeend",
+                                        `<p>CITY: ${part.long_name}</p>`
+                                    );
+                            }
                                 /*                             if (part.types.includes("locality")) {
                                                                 document.body.insertAdjacentHTML(
                                                                     "beforeend",
