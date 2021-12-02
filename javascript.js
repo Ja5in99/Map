@@ -14,7 +14,12 @@ function initMap() {
             longclicked = position.coords.longitude;
             initialLocation = new google.maps.LatLng(latclicked, longclicked);
             map.setCenter(initialLocation);
-            
+        
+            let arr = document.querySelectorAll("p");
+            //rensa tidigare plats.
+            for (let i = 0; i < arr.length; i++) {
+                document.querySelector("p").remove();
+            }
         const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
 
         let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
@@ -144,6 +149,11 @@ function initMap() {
                     infoWindow.setContent("Location found.");
                     infoWindow.open(map);
                     map.setCenter(pos);
+                    let arr = document.querySelectorAll("p");
+                    //rensa tidigare plats.
+                    for (let i = 0; i < arr.length; i++) {
+                        document.querySelector("p").remove();
+                    }
                     const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
 
                     let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
