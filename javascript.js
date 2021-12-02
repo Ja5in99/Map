@@ -117,7 +117,8 @@ function initMap() {
                     if (part.types.includes("postal_town")) {
                         document.body.insertAdjacentHTML(
                             "afterbegin",
-                            `<p>CITY: ${part.long_name}</p>`
+                            `<div class=test><p>City: ${part.long_name}</p></div>`
+                            // `<p>CITY: ${part.long_name}</p>`
                         );
                     }
                     /*                     if (part.types.includes("locality")) {
@@ -193,10 +194,11 @@ function initMap() {
                                 }
                                 if (part.types.includes("postal_town")) {
                                     document.body.insertAdjacentHTML(
-                                        "beforeend",
-                                        `<p>CITY: ${part.long_name}</p>`
+                                        "afterbegin",
+                                        `<div class=test><p>City: ${part.long_name}</p></div>`
+
                                     );
-                            }
+                                }
                                 /*                             if (part.types.includes("locality")) {
                                                                 document.body.insertAdjacentHTML(
                                                                     "beforeend",
