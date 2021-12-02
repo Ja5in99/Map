@@ -22,9 +22,17 @@
     justify-content: center;
     text-align: center;
     box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.863);
+<<<<<<< HEAD
 }
 
 .one {
+=======
+  }
+  .test {
+    text-align: center;
+  }
+  .one {
+>>>>>>> 2761f437fe697d05d4487dcd0224e8fc9af9a69e
     border-radius: 15px;
     padding: 20px;
     margin: 10px;
@@ -46,8 +54,13 @@
     border-radius: 15px;
     padding: 20px;
     margin: 10px;
+<<<<<<< HEAD
 }
 
 body {
     background-color: rgb(238, 238, 190);
 }
+=======
+  }
+  
+>>>>>>> 2761f437fe697d05d4487dcd0224e8fc9af9a69e

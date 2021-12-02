@@ -14,7 +14,12 @@ function initMap() {
             longclicked = position.coords.longitude;
             initialLocation = new google.maps.LatLng(latclicked, longclicked);
             map.setCenter(initialLocation);
-            
+        
+            let arr = document.querySelectorAll("p");
+            //rensa tidigare plats.
+            for (let i = 0; i < arr.length; i++) {
+                document.querySelector("p").remove();
+            }
         const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
 
         let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
@@ -27,17 +32,17 @@ function initMap() {
                 parts.forEach(part => {
                     if (part.types.includes("country")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>COUNTRY: ${part.long_name}</p>`
+                            "afterbegin",
+                            `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                         );
                     }
                     if (part.types.includes("administrative_area_level_1")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>PROVINCE: ${part.long_name}</p>`
+                            "afterbegin",
+                            `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                         );
                     }
-                    if (part.types.includes("locality")) {
+/*                     if (part.types.includes("locality")) {
                         document.body.insertAdjacentHTML(
                             "beforeend",
                             `<p>Kommun: ${part.long_name}</p>`
@@ -54,7 +59,7 @@ function initMap() {
                             "beforeend",
                             `<p>ROUTE: ${part.long_name}</p>`
                         );
-                    }
+                    } */
                 });
 
             })
@@ -90,17 +95,17 @@ function initMap() {
                 parts.forEach(part => {
                     if (part.types.includes("country")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>COUNTRY: ${part.long_name}</p>`
+                            "afterbegin",
+                            `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                         );
                     }
                     if (part.types.includes("administrative_area_level_1")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>PROVINCE: ${part.long_name}</p>`
+                            "afterbegin",
+                            `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                         );
                     }
-                    if (part.types.includes("locality")) {
+/*                     if (part.types.includes("locality")) {
                         document.body.insertAdjacentHTML(
                             "beforeend",
                             `<p>Kommun: ${part.long_name}</p>`
@@ -117,7 +122,7 @@ function initMap() {
                             "beforeend",
                             `<p>ROUTE: ${part.long_name}</p>`
                         );
-                    }
+                    } */
                 });
 
             })
@@ -144,6 +149,11 @@ function initMap() {
                     infoWindow.setContent("Location found.");
                     infoWindow.open(map);
                     map.setCenter(pos);
+                    let arr = document.querySelectorAll("p");
+                    //rensa tidigare plats.
+                    for (let i = 0; i < arr.length; i++) {
+                        document.querySelector("p").remove();
+                    }
                     const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
 
                     let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
@@ -156,17 +166,17 @@ function initMap() {
                         parts.forEach(part => {
                             if (part.types.includes("country")){
                                 document.body.insertAdjacentHTML(
-                                    "beforeend",
-                                    `<p>COUNTRY: ${part.long_name}</p>`
+                                    "afterbegin",
+                                    `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                                 );
                             }
                             if (part.types.includes("administrative_area_level_1")) {
                                 document.body.insertAdjacentHTML(
-                                    "beforeend",
-                                    `<p>PROVINCE: ${part.long_name}</p>`
+                                    "afterbegin",
+                                    `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                                 );
                             }
-                            if (part.types.includes("locality")) {
+/*                             if (part.types.includes("locality")) {
                                 document.body.insertAdjacentHTML(
                                     "beforeend",
                                     `<p>Kommun: ${part.long_name}</p>`
@@ -183,7 +193,7 @@ function initMap() {
                                     "beforeend",
                                     `<p>ROUTE: ${part.long_name}</p>`
                                 );
-                            }
+                            } */
                         });
                     })
                     
