@@ -22,17 +22,13 @@
     justify-content: center;
     text-align: center;
     box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.863);
-<<<<<<< HEAD
+}
+
+.test {
+    text-align: center;
 }
 
 .one {
-=======
-  }
-  .test {
-    text-align: center;
-  }
-  .one {
->>>>>>> 2761f437fe697d05d4487dcd0224e8fc9af9a69e
     border-radius: 15px;
     padding: 20px;
     margin: 10px;
@@ -54,13 +50,20 @@
     border-radius: 15px;
     padding: 20px;
     margin: 10px;
-<<<<<<< HEAD
 }
 
 body {
-    background-color: rgb(238, 238, 190);
+    background-image: url("https://cdn.crello.com/api/media/small/216484030/stock-photo-beautiful-light-blue-cloudy-sky");
+    background-size: cover;
 }
-=======
-  }
-  
->>>>>>> 2761f437fe697d05d4487dcd0224e8fc9af9a69e
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
+    -webkit-text-fill-color: rgb(15, 15, 15);
+    -webkit-text-stroke-width: 1.9px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    justify-content: center;
+    text-align: center;
+}

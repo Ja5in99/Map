@@ -4,68 +4,77 @@ let map, infoWindow;
 
 function initMap() {
     var options = {
-        
+
         zoom: 18,
-    
+
     }
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+        navigator.geolocation.getCurrentPosition(function(position) {
             latclicked = position.coords.latitude;
             longclicked = position.coords.longitude;
             initialLocation = new google.maps.LatLng(latclicked, longclicked);
             map.setCenter(initialLocation);
-        
+
             let arr = document.querySelectorAll("p");
             //rensa tidigare plats.
             for (let i = 0; i < arr.length; i++) {
                 document.querySelector("p").remove();
             }
-        const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
+            const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
 
-        let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                let parts = data.results[0].address_components;
+            let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    let parts = data.results[0].address_components;
 
-                parts.forEach(part => {
-                    if (part.types.includes("country")) {
-                        document.body.insertAdjacentHTML(
-                            "afterbegin",
-                            `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
-                        );
-                    }
-                    if (part.types.includes("administrative_area_level_1")) {
-                        document.body.insertAdjacentHTML(
-                            "afterbegin",
-                            `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
-                        );
-                    }
-/*                     if (part.types.includes("locality")) {
-                        document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>Kommun: ${part.long_name}</p>`
-                        );
-                    }
-                    if (part.types.includes("postal_town")) {
-                        document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>CITY: ${part.long_name}</p>`
-                        );
-                    }
-                    if (part.types.includes("route", "street_number")) {
-                        document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>ROUTE: ${part.long_name}</p>`
-                        );
-                    } */
-                });
+                    parts.forEach(part => {
+                        if (part.types.includes("country")) {
+                            document.body.insertAdjacentHTML(
+                                "afterbegin",
+                                `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
+                            );
+                        }
+                        if (part.types.includes("administrative_area_level_1")) {
+                            document.body.insertAdjacentHTML(
+                                "afterbegin",
+                                `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
+                            );
+                        }
+                        if (part.types.includes("postal_town")) {
+                            document.body.insertAdjacentHTML(
+                                "afterbegin",
+                                `<p>CITY: ${part.long_name}</p>`
+                            );
+                        }
 
-            })
+
+
+                        /*                     if (part.types.includes("locality")) {
+                                                document.body.insertAdjacentHTML(
+                                                    "beforeend",
+                                                    `<p>Kommun: ${part.long_name}</p>`
+                                                );
+                                            }
+                                            if (part.types.includes("postal_town")) {
+                                                document.body.insertAdjacentHTML(
+                                                    "beforeend",
+                                                    `<p>CITY: ${part.long_name}</p>`
+                                                );
+                                            }
+                                            if (part.types.includes("route", "street_number")) {
+                                                document.body.insertAdjacentHTML(
+                                                    "beforeend",
+                                                    `<p>ROUTE: ${part.long_name}</p>`
+                                                );
+                                            } */
+                    });
+
+                })
             yrApi();
         });
-        
+
     }
     var map = new
     google.maps.Map(document.getElementById('map'), options);
@@ -105,24 +114,30 @@ function initMap() {
                             `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                         );
                     }
-/*                     if (part.types.includes("locality")) {
-                        document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>Kommun: ${part.long_name}</p>`
-                        );
-                    }
                     if (part.types.includes("postal_town")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
+                            "afterbegin",
                             `<p>CITY: ${part.long_name}</p>`
                         );
                     }
-                    if (part.types.includes("route", "street_number")) {
-                        document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>ROUTE: ${part.long_name}</p>`
-                        );
-                    } */
+                    /*                     if (part.types.includes("locality")) {
+                                            document.body.insertAdjacentHTML(
+                                                "beforeend",
+                                                `<p>Kommun: ${part.long_name}</p>`
+                                            );
+                                        }
+                                        if (part.types.includes("postal_town")) {
+                                            document.body.insertAdjacentHTML(
+                                                "beforeend",
+                                                `<p>CITY: ${part.long_name}</p>`
+                                            );
+                                        }
+                                        if (part.types.includes("route", "street_number")) {
+                                            document.body.insertAdjacentHTML(
+                                                "beforeend",
+                                                `<p>ROUTE: ${part.long_name}</p>`
+                                            );
+                                        } */
                 });
 
             })
@@ -158,47 +173,47 @@ function initMap() {
 
                     let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
                     fetch(url)
-                    .then(response => response.json())
-                    .then( data => {
-                        console.log(data)
-                        let parts = data.results [0].address_components;
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data)
+                            let parts = data.results[0].address_components;
 
-                        parts.forEach(part => {
-                            if (part.types.includes("country")){
-                                document.body.insertAdjacentHTML(
-                                    "afterbegin",
-                                    `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
-                                );
-                            }
-                            if (part.types.includes("administrative_area_level_1")) {
-                                document.body.insertAdjacentHTML(
-                                    "afterbegin",
-                                    `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
-                                );
-                            }
-/*                             if (part.types.includes("locality")) {
-                                document.body.insertAdjacentHTML(
-                                    "beforeend",
-                                    `<p>Kommun: ${part.long_name}</p>`
-                                );
-                            }
-                            if (part.types.includes("postal_town")) {
-                                document.body.insertAdjacentHTML(
-                                    "beforeend",
-                                    `<p>CITY: ${part.long_name}</p>`
-                                );
-                        }
-                            if (part.types.includes("route", "street_number")) {
-                                document.body.insertAdjacentHTML(
-                                    "beforeend",
-                                    `<p>ROUTE: ${part.long_name}</p>`
-                                );
-                            } */
-                        });
-                    })
-                    
-                  },
-                  () => {
+                            parts.forEach(part => {
+                                if (part.types.includes("country")) {
+                                    document.body.insertAdjacentHTML(
+                                        "afterbegin",
+                                        `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
+                                    );
+                                }
+                                if (part.types.includes("administrative_area_level_1")) {
+                                    document.body.insertAdjacentHTML(
+                                        "afterbegin",
+                                        `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
+                                    );
+                                }
+                                /*                             if (part.types.includes("locality")) {
+                                                                document.body.insertAdjacentHTML(
+                                                                    "beforeend",
+                                                                    `<p>Kommun: ${part.long_name}</p>`
+                                                                );
+                                                            }
+                                                            if (part.types.includes("postal_town")) {
+                                                                document.body.insertAdjacentHTML(
+                                                                    "beforeend",
+                                                                    `<p>CITY: ${part.long_name}</p>`
+                                                                );
+                                                        }
+                                                            if (part.types.includes("route", "street_number")) {
+                                                                document.body.insertAdjacentHTML(
+                                                                    "beforeend",
+                                                                    `<p>ROUTE: ${part.long_name}</p>`
+                                                                );
+                                                            } */
+                            });
+                        })
+
+                },
+                () => {
                     handleLocationError(true, infoWindow, map.getCenter());
                 }
             );
