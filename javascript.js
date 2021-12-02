@@ -1,5 +1,3 @@
-
-
 let map, infoWindow;
 
 
@@ -98,7 +96,7 @@ yrApi();
                             if (part.types.includes("country")){
                                 document.body.insertAdjacentHTML(
                                     "beforeend",
-                                    `<p<>COUNTRY: ${part.long_name}</p>`
+                                    `<p>COUNTRY: ${part.long_name}</p>`
                                 );
                             }
                             if (part.types.includes("administrative_area_level_1")) {
