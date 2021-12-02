@@ -15,6 +15,11 @@ function initMap() {
             initialLocation = new google.maps.LatLng(latclicked, longclicked);
             map.setCenter(initialLocation);
         
+            let arr = document.querySelectorAll("p");
+            //rensa tidigare plats.
+            for (let i = 0; i < arr.length; i++) {
+                document.querySelector("p").remove();
+            }
         const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
 
         let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
@@ -26,15 +31,15 @@ function initMap() {
 
                 parts.forEach(part => {
                     if (part.types.includes("country")) {
-                        document.body.querySelector(
+                        document.body.insertAdjacentHTML(
                             "afterbegin",
-                            `<div class=test>COUNTRY: ${part.long_name}</div>`
+                            `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                         );
                     }
                     if (part.types.includes("administrative_area_level_1")) {
-                        document.body.querySelector(
+                        document.body.insertAdjacentHTML(
                             "afterbegin",
-                            `<div class=test>PROVINCE: ${part.long_name}</div>`
+                            `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                         );
                     }
 /*                     if (part.types.includes("locality")) {
@@ -70,7 +75,11 @@ function initMap() {
     google.maps.event.addListener(map, 'click', function(event) {
         latclicked = event.latLng.lat();
 
-
+        let arr = document.querySelectorAll("p");
+        //rensa tidigare plats.
+        for (let i = 0; i < arr.length; i++) {
+            document.querySelector("p").remove();
+        }
 
         longclicked = event.latLng.lng();
 
@@ -85,15 +94,15 @@ function initMap() {
 
                 parts.forEach(part => {
                     if (part.types.includes("country")) {
-                        document.body.querySelector(
+                        document.body.insertAdjacentHTML(
                             "afterbegin",
-                            `<div class=test>COUNTRY: ${part.long_name}</div>`
+                            `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                         );
                     }
                     if (part.types.includes("administrative_area_level_1")) {
-                        document.body.querySelector(
+                        document.body.insertAdjacentHTML(
                             "afterbegin",
-                            `<div class=test>PROVINCE: ${part.long_name}</div>`
+                            `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                         );
                     }
 /*                     if (part.types.includes("locality")) {
@@ -140,6 +149,11 @@ function initMap() {
                     infoWindow.setContent("Location found.");
                     infoWindow.open(map);
                     map.setCenter(pos);
+                    let arr = document.querySelectorAll("p");
+                    //rensa tidigare plats.
+                    for (let i = 0; i < arr.length; i++) {
+                        document.querySelector("p").remove();
+                    }
                     const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
 
                     let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
@@ -151,14 +165,16 @@ function initMap() {
 
                         parts.forEach(part => {
                             if (part.types.includes("country")){
-                                document.body.querySelector(
+                                document.body.insertAdjacentHTML(
                                     "afterbegin",
-                                    `<div class=test>COUNTRY: ${part.long_name}</div>`
+                                    `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                                 );
                             }
                             if (part.types.includes("administrative_area_level_1")) {
-                                document.body.querySelector('p.test').innerHTML = 'PROVINCE: ${part.long_name}</div>';
-                                
+                                document.body.insertAdjacentHTML(
+                                    "afterbegin",
+                                    `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
+                                );
                             }
 /*                             if (part.types.includes("locality")) {
                                 document.body.insertAdjacentHTML(
