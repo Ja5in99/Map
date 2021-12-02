@@ -17,7 +17,7 @@ function initMap() {
         latclicked = event.latLng.lat();
 
         let arr = document.querySelectorAll("p");
-
+        //rensa tidigare plats.
         for (let i = 0; i < arr.length; i++) {
             document.querySelector("p").remove();
         }
