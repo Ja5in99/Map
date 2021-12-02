@@ -32,17 +32,17 @@ function initMap() {
                 parts.forEach(part => {
                     if (part.types.includes("country")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>COUNTRY: ${part.long_name}</p>`
+                            "afterbegin",
+                            `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                         );
                     }
                     if (part.types.includes("administrative_area_level_1")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>PROVINCE: ${part.long_name}</p>`
+                            "afterbegin",
+                            `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                         );
                     }
-                    if (part.types.includes("locality")) {
+/*                     if (part.types.includes("locality")) {
                         document.body.insertAdjacentHTML(
                             "beforeend",
                             `<p>Kommun: ${part.long_name}</p>`
@@ -59,7 +59,7 @@ function initMap() {
                             "beforeend",
                             `<p>ROUTE: ${part.long_name}</p>`
                         );
-                    }
+                    } */
                 });
 
             })
@@ -95,17 +95,17 @@ function initMap() {
                 parts.forEach(part => {
                     if (part.types.includes("country")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>COUNTRY: ${part.long_name}</p>`
+                            "afterbegin",
+                            `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                         );
                     }
                     if (part.types.includes("administrative_area_level_1")) {
                         document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>PROVINCE: ${part.long_name}</p>`
+                            "afterbegin",
+                            `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                         );
                     }
-                    if (part.types.includes("locality")) {
+/*                     if (part.types.includes("locality")) {
                         document.body.insertAdjacentHTML(
                             "beforeend",
                             `<p>Kommun: ${part.long_name}</p>`
@@ -122,7 +122,7 @@ function initMap() {
                             "beforeend",
                             `<p>ROUTE: ${part.long_name}</p>`
                         );
-                    }
+                    } */
                 });
 
             })
@@ -166,17 +166,17 @@ function initMap() {
                         parts.forEach(part => {
                             if (part.types.includes("country")){
                                 document.body.insertAdjacentHTML(
-                                    "beforeend",
-                                    `<p>COUNTRY: ${part.long_name}</p>`
+                                    "afterbegin",
+                                    `<div class=test><p>COUNTRY: ${part.long_name}</p></div>`
                                 );
                             }
                             if (part.types.includes("administrative_area_level_1")) {
                                 document.body.insertAdjacentHTML(
-                                    "beforeend",
-                                    `<p>PROVINCE: ${part.long_name}</p>`
+                                    "afterbegin",
+                                    `<div class=test><p>PROVINCE: ${part.long_name}</p></div>`
                                 );
                             }
-                            if (part.types.includes("locality")) {
+/*                             if (part.types.includes("locality")) {
                                 document.body.insertAdjacentHTML(
                                     "beforeend",
                                     `<p>Kommun: ${part.long_name}</p>`
@@ -193,7 +193,7 @@ function initMap() {
                                     "beforeend",
                                     `<p>ROUTE: ${part.long_name}</p>`
                                 );
-                            }
+                            } */
                         });
                     })
                     
