@@ -20,7 +20,7 @@ function initMap() {
             for (let i = 0; i < arr.length; i++) {
                 document.querySelector("p").remove();
             }
-            const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
+            const KEY = "";
 
             let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
             fetch(url)
@@ -92,7 +92,7 @@ function initMap() {
 
         longclicked = event.latLng.lng();
 
-        const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
+        const KEY = "";
 
         let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
         fetch(url)
@@ -170,7 +170,7 @@ function initMap() {
                     for (let i = 0; i < arr.length; i++) {
                         document.querySelector("p").remove();
                     }
-                    const KEY = "AIzaSyC4LOrd9Dy5Uxs8cQ7WyoIZ7yMMVGxjIh0";
+                    const KEY = "";
 
                     let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latclicked},${longclicked}&key=${KEY}`;
                     fetch(url)
